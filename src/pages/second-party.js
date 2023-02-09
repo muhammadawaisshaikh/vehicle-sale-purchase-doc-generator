@@ -1,7 +1,36 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import React, { useState } from 'react';
+import useSecondPartyStore from '@/store/second-party';
 
 export default function SecondParty() {
+  // State Management
+  const secondParty = useSecondPartyStore((state) => state.data);
+  const setSecondParty = useSecondPartyStore((state) => state.setSecondParty);
+
+  const [cnic, setCnic] = useState('');
+  const [name, setName] = useState('');
+  const [fathersName, setFathersName] = useState('');
+  const [contact, setContact] = useState('');
+  const [address, setAddress] = useState('');
+  const [residentialAddress, setResidentialAddress] = useState('');
+
+  const onSubmit = () => {
+    const payload = {
+      cnic: cnic,
+      name: name,
+      fathersName: fathersName,
+      contact: contact,
+      address: address,
+      residentialAddress: residentialAddress
+    }
+
+    // adding data to zustand store 
+    setSecondParty(payload);
+
+    console.log(secondParty);
+  }
+
   return (
     <>
       <main className='main'>
@@ -11,26 +40,30 @@ export default function SecondParty() {
         </h1>
         <div className='row'>
           <div className='col-md-3 col-12 mb-4'>
-            <input type="text" className="form-control" placeholder="CNIC #" />
+            <input type="text" className="form-control" placeholder="CNIC #" onChange={(e) => setCnic(e.target.value)} />
           </div>
           <div className='col-md-3 col-12 mb-4'>
-            <input type="text" className="form-control" placeholder="Name as per CNIC" />
+            <input type="text" className="form-control" placeholder="Name as per CNIC" onChange={(e) => setName(e.target.value)} />
           </div>
           <div className='col-md-3 col-12 mb-4'>
-            <input type="text" className="form-control" placeholder="Fathers Name as per CNIC" />
+            <input type="text" className="form-control" placeholder="Fathers Name as per CNIC" onChange={(e) => setFathersName(e.target.value)} />
           </div>
           <div className='col-md-3 col-12 mb-4'>
-            <input type="text" className="form-control" placeholder="Contact" />
+            <input type="text" className="form-control" placeholder="Contact" onChange={(e) => setContact(e.target.value)} />
           </div>
           <div className='col-md-12 col-12 mb-4'>
-            <input type="text" className="form-control" placeholder="Address as per CNIC" />
+            <input type="text" className="form-control" placeholder="Address as per CNIC" onChange={(e) => setAddress(e.target.value)} />
           </div>
           <div className='col-md-12 col-12 mb-4'>
-            <input type="text" className="form-control" placeholder="Residential Address" />
+            <input type="text" className="form-control" placeholder="Residential Address" onChange={(e) => setResidentialAddress(e.target.value)} />
           </div>
         </div>
 
-        <Link className='btn btn-primary text-white' href="/vehicle-details">Next Step: Vehicle Details Form</Link>
+        <Link className='btn btn-primary text-white' href="/vehicle-details" onClick={() => onSubmit()}>
+          Next Step: Vehicle Details Form
+        </Link>
+
+        <a className='btn btn-primary text-white' onClick={() => onSubmit()}>Test</a>
       </main>
     </>
   )
