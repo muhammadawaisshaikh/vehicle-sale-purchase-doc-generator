@@ -5,7 +5,7 @@ export default function PaymentDetails() {
   return (
     <>
       <main className='main'>
-        <Link className='back-btn btn btn-info text-white' href='/vehicle-party'>Back</Link>
+        <Link className='back-btn btn btn-info text-white' href='/vehicle-details'>Back</Link>
         <h1 className='pb-5'>
           <span>Payment Details</span>
         </h1>
