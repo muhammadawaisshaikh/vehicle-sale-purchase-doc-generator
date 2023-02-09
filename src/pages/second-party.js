@@ -62,8 +62,6 @@ export default function SecondParty() {
         <Link className='btn btn-primary text-white' href="/vehicle-details" onClick={() => onSubmit()}>
           Next Step: Vehicle Details Form
         </Link>
-
-        <a className='btn btn-primary text-white' onClick={() => onSubmit()}>Test</a>
       </main>
     </>
   )

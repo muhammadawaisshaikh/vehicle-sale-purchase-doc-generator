@@ -1,6 +1,7 @@
 import { create } from 'zustand'
+import { persist } from "zustand/middleware"
 
-const useSecondPartyStore = create((set) => ({
+let store = (set) => ({
     data: {
         cnic: '',
         name: '',
@@ -30,6 +31,12 @@ const useSecondPartyStore = create((set) => ({
             residentialAddress: ''
         }
     }),
-}))
+})
+
+// persist the created state
+store = persist(store, { name: "secondParty" })
+
+// create the store
+const useSecondPartyStore = create(store);
 
 export default useSecondPartyStore;
