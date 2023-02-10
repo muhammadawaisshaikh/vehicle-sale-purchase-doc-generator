@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react';
 import SaleReceipt from '@/components/SaleReceipt';
+import DeliveryLetter from '@/components/DeliveryLetter';
 
 export default function GenerateDocs() {
 
@@ -24,6 +25,9 @@ export default function GenerateDocs() {
 
         {/* Sale Receipt */}
         <SaleReceipt />
+
+        {/* Delivery Letter */}
+        <DeliveryLetter />
       </main>
     </>
   )
