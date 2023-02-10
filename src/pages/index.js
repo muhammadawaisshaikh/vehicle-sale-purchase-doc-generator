@@ -9,7 +9,7 @@ export default function Home() {
         <div className={styles.description}>
           <h1>Vehicle Sale Purchase Doc Generator</h1>
           <p>sale receipt, transfer letter and delivery letter generator application built with ❤️ using nextjs</p>
-          <Link class="btn btn-primary" href="/first-party">Get Started</Link>
+          <Link className="btn btn-primary" href="/first-party">Get Started</Link>
         </div>
       </main>
     </>
