@@ -116,3 +116,25 @@ a {
   left: 5%;
   top: 5%;
 }
+
+p {
+  line-height: 35px;
+  margin-bottom: 0 !important;
+}
+
+.print-btn {
+  position: absolute;
+  right: 5%;
+  top: 5%;
+}
+
+@media print {
+  .no-print,
+  .no-print * {
+    display: none !important;
+  }
+
+  .main {
+    padding: 0;
+  }
+}

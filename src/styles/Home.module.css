@@ -4,3 +4,9 @@
   min-height: 100vh;
   background-color: white;
 }
+
+@media print {
+  .main {
+    padding: 0;
+  }
+}
