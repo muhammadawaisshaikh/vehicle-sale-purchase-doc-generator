@@ -83,25 +83,25 @@ export default function DeliveryLetter() {
                             </span>
                             In Perfect running condition from Mr./Mrs./M/s.
                             <span className='px-2'>
-                                <u><strong className='text-uppercase'>{firstParty?.name || 'NA'}</strong></u>
+                                <u><strong className='text-uppercase'>{secondParty?.name || 'NA'}</strong></u>
                             </span>
 
                             <span>
                                 S/o. D/o. Mr.
                                 <span className='px-2'>
-                                    <u><strong className='text-uppercase'>{firstParty?.fathersName || 'NA'}</strong></u>
+                                    <u><strong className='text-uppercase'>{secondParty?.fathersName || 'NA'}</strong></u>
                                 </span>
                             </span>
 
                             Resident of
                             <span className='px-2'>
-                                <u><strong className='text-uppercase'>{firstParty?.address || 'NA'}</strong></u>
+                                <u><strong className='text-uppercase'>{secondParty?.address || 'NA'}</strong></u>
                             </span>
 
                             <span>
                                 NIC.
                                 <span className='px-2'>
-                                    <u><strong>{firstParty?.cnic || 'NA'}</strong></u>
+                                    <u><strong>{secondParty?.cnic || 'NA'}</strong></u>
                                 </span>
                             </span>
 

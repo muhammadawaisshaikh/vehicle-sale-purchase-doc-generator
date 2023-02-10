@@ -55,9 +55,10 @@ export default function SecondParty({ data }) {
     <>
       <main className='main'>
         <Link className='back-btn btn btn-info text-white' href='/first-party'>Back</Link>
-        <h1 className='pb-1'>
+        <h1>
           <span>Second Party Details</span>
         </h1>
+        <p className='pb-3'>(A person who is selling a vehicle)</p>
         <a className='btn btn-success mb-5' onClick={() => onLoadUserDetails()}>Fill Form: Muhammad Iqbal as (First Party)</a>
 
         <div className='row'>

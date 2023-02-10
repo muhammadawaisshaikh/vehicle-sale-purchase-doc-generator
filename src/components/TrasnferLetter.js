@@ -94,13 +94,13 @@ export default function TransferLetter() {
                     <p className='text-start'>
                         Mr./Mrs./M/s.
                         <span className='px-2'>
-                            <u><strong className='text-uppercase'>{secondParty?.name || 'NA'}</strong></u>
+                            <u><strong className='text-uppercase'>{firstParty?.name || 'NA'}</strong></u>
                         </span>
 
                         <span>
                             S/o. D/o. Mr.
                             <span className='px-2'>
-                                <u><strong className='text-uppercase'>{secondParty?.fathersName || 'NA'}</strong></u>
+                                <u><strong className='text-uppercase'>{firstParty?.fathersName || 'NA'}</strong></u>
                             </span>
                         </span>
                     </p>
@@ -109,13 +109,13 @@ export default function TransferLetter() {
                     <p className='text-start'>
                         Resident of
                         <span className='px-2'>
-                            <u><strong className='text-uppercase'>{secondParty?.address || 'NA'}</strong></u>
+                            <u><strong className='text-uppercase'>{firstParty?.address || 'NA'}</strong></u>
                         </span>
 
                         <span>
                             NIC.
                             <span className='px-2'>
-                                <u><strong>{secondParty?.cnic || 'NA'}</strong></u>
+                                <u><strong>{firstParty?.cnic || 'NA'}</strong></u>
                             </span>
                             therefore the ownership of the above mentioned vehicle may kindly be transferred to his name.
                         </span>
@@ -128,7 +128,7 @@ export default function TransferLetter() {
                     <div className='text-start'>
                         <p>Yours faithfully</p>
                         <p className='px-2'>
-                            <u><strong className='text-uppercase'>({firstParty?.name || 'NA'})</strong></u>
+                            <u><strong className='text-uppercase'>({secondParty?.name || 'NA'})</strong></u>
                         </p>
 
                         <p>
@@ -137,15 +137,15 @@ export default function TransferLetter() {
                         </p>
                         <p>
                             <span className='pe-2'>CNIC No.</span>
-                            <u><strong className='text-uppercase'>{firstParty?.cnic}</strong></u>
+                            <u><strong className='text-uppercase'>{secondParty?.cnic}</strong></u>
                         </p>
                         <p>
                             <span className='pe-2'>Address:</span>
-                            <u><strong className='text-uppercase'>{firstParty?.address}</strong></u>
+                            <u><strong className='text-uppercase'>{secondParty?.address}</strong></u>
                         </p>
                         <p>
                             <span className='pe-2'>Residential Address:</span>
-                            <u><strong className='text-uppercase'>{firstParty?.residentialAddress}</strong></u>
+                            <u><strong className='text-uppercase'>{secondParty?.residentialAddress}</strong></u>
                         </p>
                     </div>
                 </div>
