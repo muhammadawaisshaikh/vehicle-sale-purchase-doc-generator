@@ -47,7 +47,7 @@ export default function FirstParty() {
                         <span>
                             (Rupees)
                             <span className='w-100 px-2'>
-                                <u><strong>{paymentDetails?.amountInWords || 'NA'}</strong></u>
+                                <u><strong className='text-uppercase'>{paymentDetails?.amountInWords || 'NA'}</strong></u>
                             </span>
                             From
                         </span>
@@ -57,13 +57,13 @@ export default function FirstParty() {
                     <p className='text-start'>
                         Mr./Mrs./M/s.
                         <span className='px-2'>
-                            <u><strong>{firstParty?.name || 'NA'}</strong></u>
+                            <u><strong className='text-uppercase'>{firstParty?.name || 'NA'}</strong></u>
                         </span>
 
                         <span>
                             S/o. D/o. Mr.
                             <span className='px-2'>
-                                <u><strong>{firstParty?.fathersName || 'NA'}</strong></u>
+                                <u><strong className='text-uppercase'>{firstParty?.fathersName || 'NA'}</strong></u>
                             </span>
                         </span>
                     </p>
@@ -72,7 +72,7 @@ export default function FirstParty() {
                     <p className='text-start'>
                         Resident of
                         <span className='px-2'>
-                            <u><strong>{firstParty?.address || 'NA'}</strong></u>
+                            <u><strong className='text-uppercase'>{firstParty?.address || 'NA'}</strong></u>
                         </span>
 
                         <span>
@@ -88,41 +88,41 @@ export default function FirstParty() {
                 <p className='text-start'>
                         Registration No
                         <span className='px-2'>
-                            <u><strong>{vehicleDetails?.registration || 'NA'}</strong></u>
+                            <u><strong className='text-uppercase'>{vehicleDetails?.registration || 'NA'}</strong></u>
                         </span>
 
                         <span>
                             Make
                             <span className='px-2'>
-                                <u><strong>{vehicleDetails?.make || 'NA'}</strong></u>
+                                <u><strong className='text-uppercase'>{vehicleDetails?.make || 'NA'}</strong></u>
                             </span>
                         </span>
 
                         <span>
                             Model
                             <span className='px-2'>
-                                <u><strong>{vehicleDetails?.model || 'NA'}</strong></u>
+                                <u><strong className='text-uppercase'>{vehicleDetails?.model || 'NA'}</strong></u>
                             </span>
                         </span>
 
                         <span>
                             Horse Power
                             <span className='px-2'>
-                                <u><strong>{vehicleDetails?.power || 'NA'}</strong></u>
+                                <u><strong className='text-uppercase'>{vehicleDetails?.power || 'NA'}</strong></u>
                             </span>
                         </span>
 
                         <span>
                             Engine No.
                             <span className='px-2'>
-                                <u><strong>{vehicleDetails?.engine || 'NA'}</strong></u>
+                                <u><strong className='text-uppercase'>{vehicleDetails?.engine || 'NA'}</strong></u>
                             </span>
                         </span>
 
                         <span>
                             Chassis No
                             <span className='px-2'>
-                                <u><strong>{vehicleDetails?.chassis || 'NA'}</strong></u>
+                                <u><strong className='text-uppercase'>{vehicleDetails?.chassis || 'NA'}</strong></u>
                             </span>
                         </span>
                     </p>
@@ -131,7 +131,7 @@ export default function FirstParty() {
                     <p className='text-start'>
                         The full and final payment has been received by Cash/Cheque No./Online
                         <span className='px-2'>
-                            <u><strong>{paymentDetails?.paymentMethod || 'NA'}</strong></u>
+                            <u><strong className='text-uppercase'>{paymentDetails?.paymentMethod || 'NA'}</strong></u>
                         </span>
                     </p>
                 </div>
@@ -157,19 +157,19 @@ export default function FirstParty() {
                     </p>
                     <p>
                         <span className='pe-2'>Name:</span>
-                        <u><strong>{secondParty?.name}</strong></u>
+                        <u><strong className='text-uppercase'>{secondParty?.name}</strong></u>
                     </p>
                     <p>
                         <span className='pe-2'>CNIC No.</span>
-                        <u><strong>{secondParty?.cnic}</strong></u>
+                        <u><strong className='text-uppercase'>{secondParty?.cnic}</strong></u>
                     </p>
                     <p>
                         <span className='pe-2'>Address:</span>
-                        <u><strong>{secondParty?.address}</strong></u>
+                        <u><strong className='text-uppercase'>{secondParty?.address}</strong></u>
                     </p>
                     <p>
                         <span className='pe-2'>Residential Address:</span>
-                        <u><strong>{secondParty?.residentialAddress}</strong></u>
+                        <u><strong className='text-uppercase'>{secondParty?.residentialAddress}</strong></u>
                     </p>
                 </div>
             </div>
