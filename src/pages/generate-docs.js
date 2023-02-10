@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react';
-import FirstParty from '@/components/FirstParty';
+import SaleReceipt from '@/components/SaleReceipt';
 
 export default function GenerateDocs() {
 
@@ -23,7 +23,7 @@ export default function GenerateDocs() {
         </h1>
 
         {/* Sale Receipt */}
-        <FirstParty />
+        <SaleReceipt />
       </main>
     </>
   )
