@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React, { useState } from 'react';
 import useSecondPartyStore from '@/store/second-party';
 
-export default function SecondParty() {
+export default function SecondParty({ data }) {
   // State Management
   const secondParty = useSecondPartyStore((state) => state.data);
   const setSecondParty = useSecondPartyStore((state) => state.setSecondParty);
@@ -27,35 +27,57 @@ export default function SecondParty() {
 
     // adding data to zustand store 
     setSecondParty(payload);
+  }
 
-    console.log(secondParty);
+  const onLoadUserDetails = () => {
+    const payload = {
+      cnic: data.cnic,
+      name: data.name,
+      fathersName: data.fathersName,
+      contact: data.contact,
+      address: data.address,
+      residentialAddress: data.residentialAddress
+    }
+
+    // adding data to zustand store 
+    setSecondParty(payload);
+
+    // populate form
+    setCnic(payload.cnic);
+    setName(payload.name);
+    setFathersName(payload.fathersName);
+    setContact(payload.contact);
+    setAddress(payload.address);
+    setResidentialAddress(payload.residentialAddress);
   }
 
   return (
     <>
       <main className='main'>
         <Link className='back-btn btn btn-info text-white' href='/first-party'>Back</Link>
-        <h1 className='pb-5'>
+        <h1 className='pb-1'>
           <span>Second Party Details</span>
         </h1>
+        <a className='btn btn-success mb-5' onClick={() => onLoadUserDetails()}>Fill Form: Muhammad Iqbal as (First Party)</a>
+
         <div className='row'>
           <div className='col-md-3 col-12 mb-4'>
-            <input type="text" className="form-control" placeholder="CNIC #" onChange={(e) => setCnic(e.target.value)} />
+            <input type="text" className="form-control" placeholder="CNIC #" value={cnic} onChange={(e) => setCnic(e.target.value)} />
           </div>
           <div className='col-md-3 col-12 mb-4'>
-            <input type="text" className="form-control" placeholder="Name as per CNIC" onChange={(e) => setName(e.target.value)} />
+            <input type="text" className="form-control" placeholder="Name as per CNIC" value={name} onChange={(e) => setName(e.target.value)} />
           </div>
           <div className='col-md-3 col-12 mb-4'>
-            <input type="text" className="form-control" placeholder="Fathers Name as per CNIC" onChange={(e) => setFathersName(e.target.value)} />
+            <input type="text" className="form-control" placeholder="Fathers Name as per CNIC" value={fathersName} onChange={(e) => setFathersName(e.target.value)} />
           </div>
           <div className='col-md-3 col-12 mb-4'>
-            <input type="text" className="form-control" placeholder="Contact" onChange={(e) => setContact(e.target.value)} />
+            <input type="text" className="form-control" placeholder="Contact" value={contact} onChange={(e) => setContact(e.target.value)} />
           </div>
           <div className='col-md-12 col-12 mb-4'>
-            <input type="text" className="form-control" placeholder="Address as per CNIC" onChange={(e) => setAddress(e.target.value)} />
+            <input type="text" className="form-control" placeholder="Address as per CNIC" value={address} onChange={(e) => setAddress(e.target.value)} />
           </div>
           <div className='col-md-12 col-12 mb-4'>
-            <input type="text" className="form-control" placeholder="Residential Address" onChange={(e) => setResidentialAddress(e.target.value)} />
+            <input type="text" className="form-control" placeholder="Residential Address" value={residentialAddress} onChange={(e) => setResidentialAddress(e.target.value)} />
           </div>
         </div>
 
@@ -65,4 +87,14 @@ export default function SecondParty() {
       </main>
     </>
   )
+}
+
+export async function getServerSideProps() {
+  const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/user-details`).then((res) => res.json());
+
+  return {
+    props: {
+      data: data,
+    },
+  };
 }
