@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import React, { useState } from 'react';
 import useSecondPartyStore from '@/store/second-party';
+import { server } from '../config';
 
 export default function SecondParty({ data }) {
   // State Management
@@ -91,7 +92,7 @@ export default function SecondParty({ data }) {
 }
 
 export async function getServerSideProps() {
-  const data = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/user-details`).then((res) => res.json());
+  const data = await fetch(`${server}/api/user-details`).then((res) => res.json());
 
   return {
     props: {
