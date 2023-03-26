@@ -5,6 +5,10 @@
   background-color: white;
 }
 
+.imageMain {
+  width: 400px;
+}
+
 @media print {
   .main {
     padding: 0;
