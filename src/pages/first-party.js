@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react';
 import useFirstPartyStore from '@/store/first-party'
-import { server } from '../config';
+import { server } from '../core/config';
 
 export default function FirstParty({ data }) {
   // State Management
